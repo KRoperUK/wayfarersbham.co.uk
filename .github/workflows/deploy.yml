@@ -15,6 +15,10 @@ jobs:
                 node-version: 18
             - run: npm ci
             - run: npm run build
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                path: ./_site/
     deploy:
         # Add a dependency to the build job
         needs: build
