@@ -1,0 +1,38 @@
+---
+pagination:
+    data: redirects
+    size: 1
+    alias: "url"
+permalink: "{{ url.name }}"
+redirects:
+    - name: index.html
+      url: "https://guildofstudents.com/organisation/wayfarers"
+    - name: calendar/
+      url: "https://calendar.google.com/calendar/u/0/embed?src=wayfarers.bham@gmail.com&ctz=Europe/London"
+    - name: facebook/
+      url: "https://facebook.com/wayfarersbham"
+    - name: instagram/
+      url: "https://instagram.com/wayfarersbham"
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ url.name }}</title>
+    <meta http-equiv="refresh" content="0; url={{ url.url }}">
+    <!-- Import Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <div class="card" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="card-content">
+            <span class="card-title">{{ url.name }}</span>
+            <p>Redirecting to <a href="{{ url.url }}">{{ url.name }}</a></p>
+        </div>
+    </div>
+    <!-- Import Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
